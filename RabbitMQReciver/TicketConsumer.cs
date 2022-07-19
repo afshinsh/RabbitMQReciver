@@ -11,9 +11,9 @@ namespace RabbitMQReciver
     public class TicketConsumer : BackgroundService
     {
         protected readonly IModel _channel;
-        private IConnection _connection;
+        private readonly IConnection _connection;
         private string _consumerTag;
-        private string QUEUE_NAME = "ticketQueue2";
+        private readonly string QUEUE_NAME = "ticketQueue2";
         public TicketConsumer()
         {
             var connectionFactory = new ConnectionFactory()
